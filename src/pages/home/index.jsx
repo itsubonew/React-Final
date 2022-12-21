@@ -24,22 +24,24 @@ function Home() {
 
       {nanika && nanika.map((one, i) => (
         <React.Fragment key={i}>
-          <li>{one}</li>
-          <input type="checkbox" />
-          <button onClick={() => deleteFunction(i)}>delete{i}</button>
+          <li className="todoList">{one}<button className="delete_Btn" onClick={() => deleteFunction(i)}>Delete</button>
+          {/* <input className="checkbox" type="checkbox" /> */}
+          </li>
+          {/* <input className="checkbox" type="checkbox" /> */}
         </React.Fragment>
       ))}
 
       
 
-      <input onChange={(e) => setRururu(e.target.value)} /> 
-      <button onClick={() => dispatch({ type: "ADD_JUNGLE", payload: rururu })}>
+      <input className="input_space" placeholder=" Add your list :)" onChange={(e) => setRururu(e.target.value)} /> 
+      <br />
+      <button className="submit_btn" onClick={() => dispatch({ type: "ADD_JUNGLE", payload: rururu })}>
         submit
       </button>
       <br></br>
-      <button onClick={() => console.log(nanika)}>
+      {/* <button onClick={() => console.log(nanika)}>
         show state inside store
-      </button>
+      </button> */}
     </div>
   );
 }
